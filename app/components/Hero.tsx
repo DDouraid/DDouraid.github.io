@@ -38,7 +38,7 @@ export default function Hero() {
       ref={ref}
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-black" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/30 dark:from-blue-900/20 via-purple-100/30 dark:via-purple-900/20 to-white dark:to-black" />
       
       <motion.div
         variants={containerVariants}
@@ -75,7 +75,7 @@ export default function Hero() {
 
         <motion.div
           variants={itemVariants}
-          className="text-xl md:text-3xl mb-6 text-gray-300"
+          className="text-xl md:text-3xl mb-6 text-gray-700 dark:text-gray-300"
         >
           <span className="inline-block mr-2">Étudiant en</span>
           <span className="inline-block gradient-text font-semibold">
@@ -85,7 +85,7 @@ export default function Hero() {
 
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8"
+          className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8"
         >
           Full-Stack Developer | AI & Cybersecurity Enthusiast | 
           Passionné par l'IA/ML, les systèmes multi-agents et l'Agentic AI
@@ -93,7 +93,7 @@ export default function Hero() {
 
         <motion.div
           variants={itemVariants}
-          className="flex flex-wrap justify-center items-center gap-4 mb-8 text-sm md:text-base text-gray-300"
+          className="flex flex-wrap justify-center items-center gap-4 mb-8 text-sm md:text-base text-gray-700 dark:text-gray-300"
         >
           <a
             href="https://www.google.com/maps?q=Bizerte,Tunisia"
@@ -101,23 +101,23 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:text-white transition-colors"
           >
-            <FaMapMarkerAlt className="text-blue-400" />
+            <FaMapMarkerAlt className="text-blue-600 dark:text-blue-400" />
             Bizerte, Tunisie
           </a>
-          <span className="text-gray-600">•</span>
+          <span className="text-gray-400 dark:text-gray-600">•</span>
           <a
             href="mailto:Douraid.dridi@esprit.tn"
-            className="flex items-center gap-2 hover:text-white transition-colors"
+            className="flex items-center gap-2 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
-            <FaEnvelope className="text-blue-400" />
+            <FaEnvelope className="text-blue-600 dark:text-blue-400" />
             Douraid.dridi@esprit.tn
           </a>
-          <span className="text-gray-600">•</span>
+          <span className="text-gray-400 dark:text-gray-600">•</span>
           <a
             href="tel:+21658861240"
-            className="flex items-center gap-2 hover:text-white transition-colors"
+            className="flex items-center gap-2 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
-            <FaPhone className="text-blue-400" />
+            <FaPhone className="text-blue-600 dark:text-blue-400" />
             +216 58 861 240
           </a>
         </motion.div>
@@ -130,29 +130,29 @@ export default function Hero() {
             href="https://github.com/DDouraid"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-4 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors glow-effect"
+            className="p-4 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors glow-effect"
             whileHover={{ scale: 1.1, y: -5 }}
             whileTap={{ scale: 0.9 }}
           >
-            <FaGithub className="text-2xl text-white" />
+            <FaGithub className="text-2xl text-gray-900 dark:text-white" />
           </motion.a>
           <motion.a
             href="https://www.linkedin.com/in/0douraid/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-4 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors glow-effect"
+            className="p-4 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors glow-effect"
             whileHover={{ scale: 1.1, y: -5 }}
             whileTap={{ scale: 0.9 }}
           >
-            <FaLinkedin className="text-2xl text-blue-400" />
+            <FaLinkedin className="text-2xl text-blue-600 dark:text-blue-400" />
           </motion.a>
           <motion.a
             href="mailto:Douraid.dridi@esprit.tn"
-            className="p-4 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors glow-effect"
+            className="p-4 rounded-full bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors glow-effect"
             whileHover={{ scale: 1.1, y: -5 }}
             whileTap={{ scale: 0.9 }}
           >
-            <FaEnvelope className="text-2xl text-white" />
+            <FaEnvelope className="text-2xl text-gray-900 dark:text-white" />
           </motion.a>
         </motion.div>
 
@@ -162,7 +162,7 @@ export default function Hero() {
         >
           <motion.a
             href="#about"
-            className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
           >

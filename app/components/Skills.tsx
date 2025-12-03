@@ -89,7 +89,7 @@ export default function Skills() {
               variants={itemVariants}
               className="glass rounded-xl p-6 hover:scale-105 transition-transform"
             >
-              <h3 className="text-lg font-semibold text-white mb-4 gradient-text">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 gradient-text">
                 {category.title}
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -99,7 +99,7 @@ export default function Skills() {
                     initial={{ opacity: 0, scale: 0 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ delay: index * 0.1 + i * 0.05 }}
-                    className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 text-gray-300 text-sm hover:border-blue-400 transition-colors"
+                    className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-500/20 dark:to-purple-500/20 border border-blue-300 dark:border-blue-500/30 text-gray-800 dark:text-gray-300 text-sm hover:border-blue-500 dark:hover:border-blue-400 transition-colors"
                   >
                     {skill}
                   </motion.span>
@@ -116,27 +116,27 @@ export default function Skills() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-12 glass rounded-xl p-8"
         >
-          <h3 className="text-2xl font-semibold text-white mb-6 gradient-text text-center">
+          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 gradient-text text-center">
             Certificats
           </h3>
           <div className="grid md:grid-cols-2 gap-4 text-sm">
             <div>
-              <p className="text-gray-300 mb-2">
-                <span className="text-blue-400 font-semibold">AWS Academy Graduate</span> – Cloud Foundations (2025)
+              <p className="text-gray-700 dark:text-gray-300 mb-2">
+                <span className="text-blue-600 dark:text-blue-400 font-semibold">AWS Academy Graduate</span> – Cloud Foundations (2025)
               </p>
-              <p className="text-gray-300 mb-2">
-                <span className="text-blue-400 font-semibold">Hashgraph Developer Certificate</span> (2025)
+              <p className="text-gray-700 dark:text-gray-300 mb-2">
+                <span className="text-blue-600 dark:text-blue-400 font-semibold">Hashgraph Developer Certificate</span> (2025)
               </p>
-              <p className="text-gray-300">
-                <span className="text-blue-400 font-semibold">CCNA</span> (2024)
+              <p className="text-gray-700 dark:text-gray-300">
+                <span className="text-blue-600 dark:text-blue-400 font-semibold">CCNA</span> (2024)
               </p>
             </div>
             <div>
-              <p className="text-gray-300 mb-2">
-                <span className="text-purple-400 font-semibold">Certificat Langue Anglaise:</span> IEUK (B2), BEC (B2)
+              <p className="text-gray-700 dark:text-gray-300 mb-2">
+                <span className="text-purple-600 dark:text-purple-400 font-semibold">Certificat Langue Anglaise:</span> IEUK (B2), BEC (B2)
               </p>
-              <p className="text-gray-300">
-                <span className="text-purple-400 font-semibold">Certificat Langue Française:</span> B2
+              <p className="text-gray-700 dark:text-gray-300">
+                <span className="text-purple-600 dark:text-purple-400 font-semibold">Certificat Langue Française:</span> B2
               </p>
             </div>
           </div>

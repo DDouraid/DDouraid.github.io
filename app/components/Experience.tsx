@@ -92,26 +92,26 @@ export default function Experience() {
                         <FaBriefcase className="text-white" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold text-white">{exp.title}</h3>
-                        <p className="text-blue-400 font-medium">{exp.company}</p>
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{exp.title}</h3>
+                        <p className="text-blue-600 dark:text-blue-400 font-medium">{exp.company}</p>
                       </div>
                     </div>
-                    <p className="text-purple-400 mb-3 font-medium">{exp.role}</p>
-                    <div className="flex items-center gap-2 text-gray-400 mb-4 text-sm">
+                    <p className="text-purple-600 dark:text-purple-400 mb-3 font-medium">{exp.role}</p>
+                    <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 mb-4 text-sm">
                       <FaCalendarAlt />
                       <span>{exp.period}</span>
                     </div>
                     <ul className="space-y-2">
                       {exp.description.map((item, i) => (
-                        <li key={i} className="text-gray-300 text-sm flex items-start gap-2">
-                          <span className="text-blue-400 mt-1.5">▸</span>
+                        <li key={i} className="text-gray-700 dark:text-gray-300 text-sm flex items-start gap-2">
+                          <span className="text-blue-600 dark:text-blue-400 mt-1.5">▸</span>
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
-                <div className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 border-4 border-black transform -translate-x-1/2" />
+                <div className="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 border-4 border-white dark:border-black transform -translate-x-1/2" />
               </motion.div>
             ))}
           </div>

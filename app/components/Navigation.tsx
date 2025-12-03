@@ -33,7 +33,7 @@ export default function Navigation() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-black/80 backdrop-blur-md shadow-lg'
+          ? 'bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-lg'
           : 'bg-transparent'
       }`}
     >
@@ -54,7 +54,7 @@ export default function Navigation() {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group"
+                className="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors relative group"
                 whileHover={{ y: -2 }}
               >
                 {item.name}
@@ -63,7 +63,7 @@ export default function Navigation() {
             ))}
             <motion.button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
+              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
               whileHover={{ rotate: 180 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -79,7 +79,7 @@ export default function Navigation() {
           <div className="md:hidden flex items-center space-x-4">
             <motion.button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-800"
+              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800"
               whileTap={{ scale: 0.9 }}
             >
               {theme === 'dark' ? (
@@ -90,7 +90,7 @@ export default function Navigation() {
             </motion.button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg bg-gray-800"
+              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800"
             >
               {mobileMenuOpen ? (
                 <FaTimes className="text-white" />
@@ -109,7 +109,7 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/95 backdrop-blur-md"
+            className="md:hidden bg-white/95 dark:bg-black/95 backdrop-blur-md"
           >
             <div className="px-4 pt-2 pb-4 space-y-2">
               {navItems.map((item) => (
@@ -117,7 +117,7 @@ export default function Navigation() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block px-3 py-2 rounded-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                  className="block px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white transition-colors"
                 >
                   {item.name}
                 </a>
