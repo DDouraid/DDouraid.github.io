@@ -1,15 +1,16 @@
 'use client'
 
-import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { useLanguage } from './LanguageProvider'
 
 export default function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center gap-2">
-            Made with <FaHeart className="text-red-500" /> by Douraid Dridi
-          </p>
+          <p className="text-gray-600 dark:text-gray-400 text-sm">{t.footer.madeWith}</p>
           <div className="flex gap-4">
             <a
               href="https://github.com/DDouraid"
@@ -35,11 +36,10 @@ export default function Footer() {
             </a>
           </div>
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            © {new Date().getFullYear()} Douraid Dridi. All rights reserved.
+            © {new Date().getFullYear()} Douraid Dridi. {t.footer.rights}
           </p>
         </div>
       </div>
     </footer>
   )
 }
-

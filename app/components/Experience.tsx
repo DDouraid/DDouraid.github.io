@@ -3,63 +3,12 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { FaBriefcase, FaCalendarAlt } from 'react-icons/fa'
-
-const experiences = [
-  {
-    title: 'Projet de fin d\'études (PFE)',
-    company: 'Talan Tunisie',
-    role: 'Ingénieur Développement AI / Full Stack',
-    period: '02/2026 – 07/2026',
-    description: [
-      'Syntrex : plateforme d\'orchestration multi-agents (LangGraph, LangChain, FastAPI, React) transformant des briefs marketing en stratégie de marque, copy, visuels et posts sociaux.',
-      'Pipeline de bout en bout avec agents spécialisés (Recherche, Stratégie, Contenu, Qualité/Critique), streaming temps réel (SSE), mémoire de marque, génération multimédia et tableau de bord avec exports (PDF, CSV, JSON).',
-      'Architecture : API REST FastAPI, orchestration LangGraph, PostgreSQL, authentification JWT, intégration LLM OpenAI, veille marché (scraping) et revue human-in-the-loop.',
-    ],
-  },
-  {
-    title: 'Stage d\'ingénieur',
-    company: 'Sofrecom Tunisie',
-    role: 'Ingénieur développement AI/Mobile',
-    period: '07/2025 – 09/2025',
-    description: [
-      'AgenticO AI App: Conception et développement d\'une application mobile multi‑agents pour les développeurs (génération de code depuis UI, refactoring, doc auto, tests, sécurité).',
-      'Architecture: serveur MCP, intégration LangChain, Auth Firebase, support multi‑langages.',
-      'Technologie: Flutter, MCP, LangChain, Claude 3.5, OpenAI APIs, Firebase, LiteLLM.',
-    ],
-  },
-  {
-    title: 'Stage d\'immersion en entreprise',
-    company: 'Sofrecom Tunisie: Equipe Recherche & Innovation',
-    role: 'Ingénieur développement Full Stack Web',
-    period: '07/2024 – 09/2024',
-    description: [
-      'Conception et développement d\'une plateforme éducative pour la génération du contenu dédiée aux colaborateurs Orange (LLM, IA générative, VR).',
-      'Technologie: Angular, Spring Boot, Swagger, Unity, and LLMs.',
-    ],
-  },
-  {
-    title: 'Stage de fin d\'études',
-    company: 'ArabSoft',
-    role: 'Développeur Full Stack Web/Mobile',
-    period: '02/2023 – 05/2023',
-    description: [
-      'Projet de fin d\'étude: Conception et développement d\'une application Chatroom one/one to many pour améliorer la communication en entreprise.',
-      'Technologie: Angular, Spring Boot, Flutter',
-    ],
-  },
-  {
-    title: 'Stage d\'été',
-    company: 'CYNAPSYS',
-    role: 'Développeur Full Stack Web',
-    period: '06/2022 – 07/2022',
-    description: [
-      'Conception et développement d\'une site RH facilitant les candidatures.',
-      'Technologie: SQL, J2EE.',
-    ],
-  },
-]
+import { useLanguage } from './LanguageProvider'
 
 export default function Experience() {
+  const { t } = useLanguage()
+  const experiences = t.experience.items
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -78,7 +27,7 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold text-center mb-12"
         >
-          <span className="gradient-text">Expérience</span>
+          <span className="gradient-text">{t.experience.heading}</span>
         </motion.h2>
 
         <div className="relative">
@@ -131,4 +80,3 @@ export default function Experience() {
     </section>
   )
 }
-

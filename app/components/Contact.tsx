@@ -3,49 +3,21 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { useLanguage } from './LanguageProvider'
 
 export default function Contact() {
+  const { t } = useLanguage()
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
 
-  const contactInfo = [
-    {
-      icon: FaEnvelope,
-      label: 'Email',
-      value: 'Douraid.dridi@esprit.tn',
-      href: 'mailto:Douraid.dridi@esprit.tn',
-      color: 'text-blue-600 dark:text-blue-400',
-    },
-    {
-      icon: FaPhone,
-      label: 'Téléphone',
-      value: '+216 58 861 240',
-      href: 'tel:+21658861240',
-      color: 'text-green-600 dark:text-green-400',
-    },
-    {
-      icon: FaMapMarkerAlt,
-      label: 'Localisation',
-      value: 'Bizerte, Tunisie',
-      href: 'https://www.google.com/maps?q=Bizerte,Tunisia',
-      color: 'text-red-600 dark:text-red-400',
-    },
-    {
-      icon: FaLinkedin,
-      label: 'LinkedIn',
-      value: '/in/0douraid/',
-      href: 'https://www.linkedin.com/in/0douraid/',
-      color: 'text-blue-600 dark:text-blue-500',
-    },
-    {
-      icon: FaGithub,
-      label: 'GitHub',
-      value: 'github.com/DDouraid',
-      href: 'https://github.com/DDouraid',
-      color: 'text-gray-700 dark:text-gray-400',
-    },
+  const contactMeta = [
+    { icon: FaEnvelope, href: 'mailto:Douraid.dridi@esprit.tn', color: 'text-blue-600 dark:text-blue-400' },
+    { icon: FaPhone, href: 'tel:+21658861240', color: 'text-green-600 dark:text-green-400' },
+    { icon: FaMapMarkerAlt, href: 'https://www.google.com/maps?q=Bizerte,Tunisia', color: 'text-red-600 dark:text-red-400' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/0douraid/', color: 'text-blue-600 dark:text-blue-500' },
+    { icon: FaGithub, href: 'https://github.com/DDouraid', color: 'text-gray-700 dark:text-gray-400' },
   ]
 
   return (
@@ -61,7 +33,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold text-center mb-12"
         >
-          <span className="gradient-text">Contact</span>
+          <span className="gradient-text">{t.contact.heading}</span>
         </motion.h2>
 
         <motion.div
@@ -71,25 +43,26 @@ export default function Contact() {
           className="glass rounded-2xl p-8 md:p-12 max-w-4xl mx-auto"
         >
           <p className="text-center text-gray-700 dark:text-gray-300 text-lg mb-8">
-            Intéressé par une collaboration ? N'hésitez pas à me contacter !
+            {t.contact.intro}
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {contactInfo.map((info, index) => {
-              const Icon = info.icon
+            {t.contact.items.map((info, index) => {
+              const meta = contactMeta[index]
+              const Icon = meta.icon
               return (
                 <motion.a
                   key={index}
-                  href={info.href}
-                  target={info.href.startsWith('http') ? '_blank' : undefined}
-                  rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  href={meta.href}
+                  target={meta.href.startsWith('http') ? '_blank' : undefined}
+                  rel={meta.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={inView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="flex items-center gap-4 p-4 rounded-lg bg-gray-100 dark:bg-gray-800/50 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors group"
                 >
                   <div className={`w-12 h-12 rounded-full bg-white dark:bg-gray-900 flex items-center justify-center group-hover:scale-110 transition-transform shadow-sm dark:shadow-none`}>
-                    <Icon className={`text-xl ${info.color}`} />
+                    <Icon className={`text-xl ${meta.color}`} />
                   </div>
                   <div>
                     <p className="text-gray-600 dark:text-gray-400 text-sm">{info.label}</p>
@@ -110,7 +83,7 @@ export default function Contact() {
               href="mailto:Douraid.dridi@esprit.tn"
               className="inline-block px-8 py-3 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105"
             >
-              Envoyer un message
+              {t.contact.send}
             </a>
           </motion.div>
         </motion.div>
@@ -118,4 +91,3 @@ export default function Contact() {
     </section>
   )
 }
-

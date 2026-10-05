@@ -2,47 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-
-const skillCategories = [
-  {
-    title: 'IA & LLMs',
-    skills: ['LangGraph', 'LangChain', 'CrewAI', 'Orchestration multi-agents', 'LLMs (OpenAI)', 'IA générative', 'Prompt engineering', 'MCP', 'LiteLLM'],
-  },
-  {
-    title: 'Backend & APIs',
-    skills: ['FastAPI', 'Spring Boot', 'Flask', 'REST', 'SSE', 'JWT', 'Pydantic', 'SQLAlchemy', 'Alembic', 'Uvicorn'],
-  },
-  {
-    title: 'Frontend & Mobile',
-    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Angular', 'Flutter'],
-  },
-  {
-    title: 'Langages',
-    skills: ['Python', 'Java', 'JavaScript/TypeScript', 'Dart', 'SQL'],
-  },
-  {
-    title: 'Bases de données',
-    skills: ['PostgreSQL', 'MySQL', 'Oracle', 'SQLite'],
-  },
-  {
-    title: 'DevOps & Outils',
-    skills: ['Git', 'CI/CD', 'Docker', 'Jenkins', 'Postman', 'BeautifulSoup (scraping)'],
-  },
-  {
-    title: 'Autres',
-    skills: ['Symfony', 'Unity', 'Firebase'],
-  },
-  {
-    title: 'Méthodologies',
-    skills: ['Agile (Scrum, Kanban)', 'TDD', 'Human-in-the-loop (HITL)'],
-  },
-  {
-    title: 'Systèmes d\'exploitation',
-    skills: ['Windows', 'Linux'],
-  },
-]
+import { useLanguage } from './LanguageProvider'
 
 export default function Skills() {
+  const { t } = useLanguage()
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -82,7 +45,7 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold text-center mb-12"
         >
-          <span className="gradient-text">Compétences</span>
+          <span className="gradient-text">{t.skills.heading}</span>
         </motion.h2>
 
         <motion.div
@@ -91,7 +54,7 @@ export default function Skills() {
           animate={inView ? 'visible' : 'hidden'}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {skillCategories.map((category, index) => (
+          {t.skills.categories.map((category, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -125,28 +88,14 @@ export default function Skills() {
           className="mt-12 glass rounded-xl p-8"
         >
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 gradient-text text-center">
-            Certificats
+            {t.skills.certificates.heading}
           </h3>
           <div className="grid md:grid-cols-2 gap-4 text-sm">
-            <div>
-              <p className="text-gray-700 dark:text-gray-300 mb-2">
-                <span className="text-blue-600 dark:text-blue-400 font-semibold">AWS Academy Graduate</span> – Cloud Foundations (2025)
+            {t.skills.certificates.items.map((cert, i) => (
+              <p key={i} className="text-gray-700 dark:text-gray-300 text-center md:text-left">
+                <span className="text-blue-600 dark:text-blue-400 font-semibold">•</span> {cert}
               </p>
-              <p className="text-gray-700 dark:text-gray-300 mb-2">
-                <span className="text-blue-600 dark:text-blue-400 font-semibold">Hashgraph Developer Certificate</span> (2025)
-              </p>
-              <p className="text-gray-700 dark:text-gray-300">
-                <span className="text-blue-600 dark:text-blue-400 font-semibold">CCNA</span> (2024)
-              </p>
-            </div>
-            <div>
-              <p className="text-gray-700 dark:text-gray-300 mb-2">
-                <span className="text-purple-600 dark:text-purple-400 font-semibold">Anglais :</span> IEUK (B2), BEC (B2)
-              </p>
-              <p className="text-gray-700 dark:text-gray-300">
-                <span className="text-purple-600 dark:text-purple-400 font-semibold">Français :</span> B2
-              </p>
-            </div>
+            ))}
           </div>
         </motion.div>
 
@@ -158,15 +107,10 @@ export default function Skills() {
           className="mt-8 glass rounded-xl p-8"
         >
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 gradient-text text-center">
-            Langues parlées
+            {t.skills.languages.heading}
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            {[
-              { name: 'Arabe', level: 'Natif' },
-              { name: 'Français', level: 'B2' },
-              { name: 'Anglais', level: 'B2' },
-              { name: 'Italien', level: 'Intermédiaire' },
-            ].map((lang, i) => (
+            {t.skills.languages.items.map((lang, i) => (
               <div key={i} className="rounded-lg bg-gray-100 dark:bg-gray-800/60 p-4">
                 <p className="text-gray-900 dark:text-white font-semibold text-lg">{lang.name}</p>
                 <p className="text-blue-600 dark:text-blue-400 text-sm font-medium">{lang.level}</p>
@@ -178,4 +122,3 @@ export default function Skills() {
     </section>
   )
 }
-

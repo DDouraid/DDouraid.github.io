@@ -1,15 +1,16 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { ThemeProvider } from './components/ThemeProvider'
+import { LanguageProvider } from './components/LanguageProvider'
 
 export const metadata: Metadata = {
-  title: 'Douraid Dridi | AI & Full Stack Engineer',
-  description: 'Portfolio of Douraid Dridi — AI & Full Stack Engineer specializing in multi-agent orchestration, LLM integration, and full-stack product development.',
+  title: 'Douraid Dridi | Software Engineer — AI & Full Stack',
+  description: 'Portfolio of Douraid Dridi — Software Engineer specializing in multi-agent orchestration, LLM integration, and full-stack product development.',
   keywords: 'Douraid Dridi, AI Engineer, Full Stack Engineer, Multi-agent, LLM, LangGraph, LangChain, FastAPI, React, Next.js, Flutter, Spring Boot, Portfolio',
   authors: [{ name: 'Douraid Dridi' }],
   openGraph: {
-    title: 'Douraid Dridi | AI & Full Stack Engineer',
-    description: 'AI-focused engineer specializing in multi-agent orchestration, LLM integration, and full-stack product development.',
+    title: 'Douraid Dridi | Software Engineer — AI & Full Stack',
+    description: 'Software engineer specializing in multi-agent orchestration, LLM integration, and full-stack product development.',
     type: 'website',
   },
 }
@@ -39,7 +40,9 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider>
-          {children}
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -5,15 +5,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
 import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
-
-const roles = [
-  'AI & Full Stack Engineer',
-  'Expert en systèmes multi-agents',
-  'Intégration de LLMs',
-  'Développeur Full-Stack',
-]
+import { useLanguage } from './LanguageProvider'
 
 export default function Hero() {
+  const { t } = useLanguage()
+  const roles = t.hero.roles
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -92,10 +89,13 @@ export default function Hero() {
 
         <motion.div
           variants={itemVariants}
-          className="flex items-center justify-center gap-3 mb-6"
+          className="flex items-center justify-center flex-wrap gap-3 mb-6"
         >
           <span className="px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-semibold shadow-lg">
-            Ingénieur Junior
+            {t.hero.badge}
+          </span>
+          <span className="px-4 py-1.5 rounded-full border border-yellow-500/50 bg-yellow-500/10 text-yellow-700 dark:text-yellow-400 text-sm font-semibold">
+            🏆 {t.hero.badgeHonors}
           </span>
         </motion.div>
 
@@ -121,9 +121,7 @@ export default function Hero() {
           variants={itemVariants}
           className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8"
         >
-          Diplômé en génie informatique (ESPRIT), spécialisé dans l'orchestration
-          multi-agents, l'intégration de LLMs et le développement full-stack. Passionné
-          par la construction de produits IA de bout en bout.
+          {t.hero.description}
         </motion.p>
 
         <motion.div
@@ -137,7 +135,7 @@ export default function Hero() {
             className="flex items-center gap-2 hover:text-white transition-colors"
           >
             <FaMapMarkerAlt className="text-blue-600 dark:text-blue-400" />
-            Bizerte, Tunisie
+            {t.hero.location}
           </a>
           <span className="text-gray-400 dark:text-gray-600">•</span>
           <a
@@ -201,7 +199,7 @@ export default function Hero() {
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
           >
-            <span>Découvrir plus</span>
+            <span>{t.hero.discover}</span>
             <svg
               className="w-5 h-5"
               fill="none"

@@ -3,21 +3,23 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from './ThemeProvider'
-import { FaMoon, FaSun, FaBars, FaTimes } from 'react-icons/fa'
-
-const navItems = [
-  { name: 'Accueil', href: '#home' },
-  { name: 'À propos', href: '#about' },
-  { name: 'Expérience', href: '#experience' },
-  { name: 'Projets', href: '#projects' },
-  { name: 'Compétences', href: '#skills' },
-  { name: 'Contact', href: '#contact' },
-]
+import { useLanguage } from './LanguageProvider'
+import { FaMoon, FaSun, FaBars, FaTimes, FaGlobe } from 'react-icons/fa'
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { theme, toggleTheme } = useTheme()
+  const { lang, toggleLang, t } = useLanguage()
+
+  const navItems = [
+    { name: t.nav.home, href: '#home' },
+    { name: t.nav.about, href: '#about' },
+    { name: t.nav.experience, href: '#experience' },
+    { name: t.nav.projects, href: '#projects' },
+    { name: t.nav.skills, href: '#skills' },
+    { name: t.nav.contact, href: '#contact' },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,6 +63,14 @@ export default function Navigation() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300" />
               </motion.a>
             ))}
+            <button
+              onClick={toggleLang}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors text-xs font-bold text-gray-700 dark:text-gray-200"
+              aria-label="Toggle language"
+            >
+              <FaGlobe className="text-sm" />
+              {lang === 'fr' ? 'EN' : 'FR'}
+            </button>
             <motion.button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
@@ -77,6 +87,14 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">
+            <button
+              onClick={toggleLang}
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-gray-200 dark:bg-gray-800 text-xs font-bold text-gray-700 dark:text-gray-200"
+              aria-label="Toggle language"
+            >
+              <FaGlobe className="text-sm" />
+              {lang === 'fr' ? 'EN' : 'FR'}
+            </button>
             <motion.button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800"
