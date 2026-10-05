@@ -5,32 +5,40 @@ import { useInView } from 'react-intersection-observer'
 
 const skillCategories = [
   {
-    title: 'Systèmes d\'exploitation',
-    skills: ['Windows', 'Linux', 'Mobile'],
+    title: 'IA & LLMs',
+    skills: ['LangGraph', 'LangChain', 'CrewAI', 'Orchestration multi-agents', 'LLMs (OpenAI)', 'IA générative', 'Prompt engineering', 'MCP', 'LiteLLM'],
   },
   {
-    title: 'DevOps',
-    skills: ['Git', 'CI/CD', 'Docker', 'Jenkins'],
+    title: 'Backend & APIs',
+    skills: ['FastAPI', 'Spring Boot', 'Flask', 'REST', 'SSE', 'JWT', 'Pydantic', 'SQLAlchemy', 'Alembic', 'Uvicorn'],
   },
   {
-    title: 'Frameworks',
-    skills: ['Angular', 'Spring Boot', 'Flutter', 'Symfony', 'Unity'],
+    title: 'Frontend & Mobile',
+    skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Angular', 'Flutter'],
   },
   {
     title: 'Langages',
-    skills: ['Java', 'Python', 'JavaScript', 'Dart'],
+    skills: ['Python', 'Java', 'JavaScript/TypeScript', 'Dart', 'SQL'],
   },
   {
     title: 'Bases de données',
-    skills: ['MySQL', 'Oracle', 'SQLite'],
+    skills: ['PostgreSQL', 'MySQL', 'Oracle', 'SQLite'],
   },
   {
-    title: 'IA & Machine Learning',
-    skills: ['Machine Learning', 'LLMs', 'Systèmes Multi-Agents', 'Agentic AI', 'Deep Learning'],
+    title: 'DevOps & Outils',
+    skills: ['Git', 'CI/CD', 'Docker', 'Jenkins', 'Postman', 'BeautifulSoup (scraping)'],
+  },
+  {
+    title: 'Autres',
+    skills: ['Symfony', 'Unity', 'Firebase'],
   },
   {
     title: 'Méthodologies',
-    skills: ['Agile (Scrum, Kanban)', 'TDD', 'Microservices'],
+    skills: ['Agile (Scrum, Kanban)', 'TDD', 'Human-in-the-loop (HITL)'],
+  },
+  {
+    title: 'Systèmes d\'exploitation',
+    skills: ['Windows', 'Linux'],
   },
 ]
 
@@ -133,12 +141,37 @@ export default function Skills() {
             </div>
             <div>
               <p className="text-gray-700 dark:text-gray-300 mb-2">
-                <span className="text-purple-600 dark:text-purple-400 font-semibold">Certificat Langue Anglaise:</span> IEUK (B2), BEC (B2)
+                <span className="text-purple-600 dark:text-purple-400 font-semibold">Anglais :</span> IEUK (B2), BEC (B2)
               </p>
               <p className="text-gray-700 dark:text-gray-300">
-                <span className="text-purple-600 dark:text-purple-400 font-semibold">Certificat Langue Française:</span> B2
+                <span className="text-purple-600 dark:text-purple-400 font-semibold">Français :</span> B2
               </p>
             </div>
+          </div>
+        </motion.div>
+
+        {/* Languages Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-8 glass rounded-xl p-8"
+        >
+          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 gradient-text text-center">
+            Langues parlées
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            {[
+              { name: 'Arabe', level: 'Natif' },
+              { name: 'Français', level: 'B2' },
+              { name: 'Anglais', level: 'B2' },
+              { name: 'Italien', level: 'Intermédiaire' },
+            ].map((lang, i) => (
+              <div key={i} className="rounded-lg bg-gray-100 dark:bg-gray-800/60 p-4">
+                <p className="text-gray-900 dark:text-white font-semibold text-lg">{lang.name}</p>
+                <p className="text-blue-600 dark:text-blue-400 text-sm font-medium">{lang.level}</p>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>

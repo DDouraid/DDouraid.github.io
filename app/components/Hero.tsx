@@ -1,15 +1,32 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
 import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
+
+const roles = [
+  'AI & Full Stack Engineer',
+  'Expert en systèmes multi-agents',
+  'Intégration de LLMs',
+  'Développeur Full-Stack',
+]
 
 export default function Hero() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
+
+  const [roleIndex, setRoleIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roles.length)
+    }, 3000)
+    return () => clearInterval(interval)
+  }, [])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -75,20 +92,38 @@ export default function Hero() {
 
         <motion.div
           variants={itemVariants}
-          className="text-xl md:text-3xl mb-6 text-gray-700 dark:text-gray-300"
+          className="flex items-center justify-center gap-3 mb-6"
         >
-          <span className="inline-block mr-2">Étudiant en</span>
-          <span className="inline-block gradient-text font-semibold">
-            Ingénierie Informatique
+          <span className="px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-semibold shadow-lg">
+            Ingénieur Junior
           </span>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          className="text-xl md:text-3xl mb-6 text-gray-700 dark:text-gray-300 h-10 flex items-center justify-center"
+        >
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={roleIndex}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.4 }}
+              className="gradient-text font-semibold"
+            >
+              {roles[roleIndex]}
+            </motion.span>
+          </AnimatePresence>
         </motion.div>
 
         <motion.p
           variants={itemVariants}
           className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8"
         >
-          Full-Stack Developer | AI & Cybersecurity Enthusiast | 
-          Passionné par l'IA/ML, les systèmes multi-agents et l'Agentic AI
+          Diplômé en génie informatique (ESPRIT), spécialisé dans l'orchestration
+          multi-agents, l'intégration de LLMs et le développement full-stack. Passionné
+          par la construction de produits IA de bout en bout.
         </motion.p>
 
         <motion.div

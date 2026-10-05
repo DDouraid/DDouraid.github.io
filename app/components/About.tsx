@@ -55,19 +55,16 @@ export default function About() {
             className="glass rounded-2xl p-8 md:p-12 mb-12"
           >
             <p className="text-lg md:text-xl text-gray-800 dark:text-gray-300 leading-relaxed text-center max-w-4xl mx-auto">
-              Majeur de classe – Étudiant en ingénierie informatique (classe terminale), 
-              passionné par l'<span className="text-blue-600 dark:text-blue-400 font-semibold">IA/ML</span>, 
-              l'intégration de <span className="text-purple-600 dark:text-purple-400 font-semibold">LLMs</span>, 
-              les <span className="text-cyan-600 dark:text-cyan-400 font-semibold">systèmes multi-agents</span> et 
-              l'<span className="text-pink-600 dark:text-pink-400 font-semibold">Agentic AI</span>. 
-              Expertise en <span className="text-green-600 dark:text-green-400 font-semibold">Angular</span>, 
-              <span className="text-green-600 dark:text-green-400 font-semibold"> Spring Boot</span>, 
-              <span className="text-green-600 dark:text-green-400 font-semibold"> Java</span>, 
-              <span className="text-green-600 dark:text-green-400 font-semibold"> Python</span>, 
-              <span className="text-green-600 dark:text-green-400 font-semibold"> Flutter</span> et méthodes 
-              <span className="text-yellow-600 dark:text-yellow-400 font-semibold"> Agile</span>. 
-              Orienté résultats, avec expérience en recherche pour transformer des idées 
-              innovantes en solutions concrètes et projets complexes.
+              Majeur de classe – Ingénieur en génie informatique diplômé d'<span className="text-blue-600 dark:text-blue-400 font-semibold">ESPRIT</span>, 
+              spécialisé dans l'<span className="text-purple-600 dark:text-purple-400 font-semibold">orchestration multi-agents</span>, 
+              l'intégration de <span className="text-cyan-600 dark:text-cyan-400 font-semibold">LLMs</span> et le 
+              <span className="text-pink-600 dark:text-pink-400 font-semibold"> développement full-stack</span>. 
+              Expérience confirmée dans la livraison de fonctionnalités IA de bout en bout 
+              (agents, streaming temps réel, contrôle qualité, tableaux de bord, exports).
+              Orienté résultats, avec une solide expérience côté <span className="text-green-600 dark:text-green-400 font-semibold">FastAPI</span>, 
+              <span className="text-green-600 dark:text-green-400 font-semibold"> React</span>, 
+              <span className="text-green-600 dark:text-green-400 font-semibold"> Python</span> et 
+              méthodes <span className="text-yellow-600 dark:text-yellow-400 font-semibold"> Agile</span>.
             </p>
           </motion.div>
 
@@ -81,7 +78,7 @@ export default function About() {
               </div>
               <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Majeur de Classe</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Étudiant en ingénierie informatique - Classe terminale
+                Diplômé Ingénieur Informatique – ESPRIT
               </p>
             </motion.div>
 
@@ -92,9 +89,9 @@ export default function About() {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 mb-4">
                 <FaCode className="text-2xl text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Full-Stack Developer</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">AI & Full Stack Engineer</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Expertise en développement web et mobile
+                Agents IA, LLMs, APIs et produits web/mobile
               </p>
             </motion.div>
 
@@ -105,9 +102,9 @@ export default function About() {
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-blue-600 mb-4">
                 <FaAward className="text-2xl text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">AI Enthusiast</h3>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Multi-agents & LLM</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Passionné par l'IA/ML, les systèmes multi-agents et l'Agentic AI
+                LangGraph, LangChain, CrewAI et orchestration
               </p>
             </motion.div>
           </div>

@@ -3,13 +3,13 @@ import './globals.css'
 import { ThemeProvider } from './components/ThemeProvider'
 
 export const metadata: Metadata = {
-  title: 'Douraid Dridi | Full-Stack Developer & AI Enthusiast',
-  description: 'Portfolio of Douraid Dridi - Full-Stack Developer, AI/ML Enthusiast, and Computer Engineering Student',
-  keywords: 'Douraid Dridi, Full-Stack Developer, AI, Machine Learning, Angular, Spring Boot, Flutter, Portfolio',
+  title: 'Douraid Dridi | AI & Full Stack Engineer',
+  description: 'Portfolio of Douraid Dridi — AI & Full Stack Engineer specializing in multi-agent orchestration, LLM integration, and full-stack product development.',
+  keywords: 'Douraid Dridi, AI Engineer, Full Stack Engineer, Multi-agent, LLM, LangGraph, LangChain, FastAPI, React, Next.js, Flutter, Spring Boot, Portfolio',
   authors: [{ name: 'Douraid Dridi' }],
   openGraph: {
-    title: 'Douraid Dridi | Full-Stack Developer & AI Enthusiast',
-    description: 'Portfolio of Douraid Dridi - Full-Stack Developer, AI/ML Enthusiast',
+    title: 'Douraid Dridi | AI & Full Stack Engineer',
+    description: 'AI-focused engineer specializing in multi-agent orchestration, LLM integration, and full-stack product development.',
     type: 'website',
   },
 }

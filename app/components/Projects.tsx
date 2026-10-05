@@ -6,6 +6,24 @@ import { FaGithub, FaLock, FaUserPlus } from 'react-icons/fa'
 
 const projects = [
   {
+    title: 'Syntrex',
+    description: 'Plateforme d\'orchestration multi-agents transformant des briefs marketing en stratégie de marque, copy, visuels et posts sociaux.',
+    technologies: ['LangGraph', 'LangChain', 'FastAPI', 'React', 'PostgreSQL', 'SSE'],
+    category: 'AI / Multi-agents',
+    isPrivate: true,
+    githubUrl: 'https://github.com/DDouraid',
+    year: '2026',
+  },
+  {
+    title: 'Recommandeur de contenu éducatif',
+    description: 'Système de recommandation de contenu éducatif basé sur le filtrage collaboratif et le Machine Learning.',
+    technologies: ['Python', 'Pandas', 'Scikit-learn', 'Angular', 'Flask', 'Docker', 'Microservices'],
+    category: 'ML / Full Stack',
+    isPrivate: true,
+    githubUrl: 'https://github.com/DDouraid',
+    year: '2025',
+  },
+  {
     title: 'TheraBot',
     description: 'Application mobile de soutien psychologique basée sur l\'IA générative.',
     technologies: ['Dart', 'Flutter', 'IA Générative'],
@@ -138,7 +156,7 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold text-center mb-12"
         >
-          <span className="gradient-text">Mes Projets GitHub</span>
+          <span className="gradient-text">Projets & Réalisations</span>
         </motion.h2>
 
         <motion.div

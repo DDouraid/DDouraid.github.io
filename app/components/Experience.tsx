@@ -6,6 +6,17 @@ import { FaBriefcase, FaCalendarAlt } from 'react-icons/fa'
 
 const experiences = [
   {
+    title: 'Projet de fin d\'études (PFE)',
+    company: 'Talan Tunisie',
+    role: 'Ingénieur Développement AI / Full Stack',
+    period: '02/2026 – 07/2026',
+    description: [
+      'Syntrex : plateforme d\'orchestration multi-agents (LangGraph, LangChain, FastAPI, React) transformant des briefs marketing en stratégie de marque, copy, visuels et posts sociaux.',
+      'Pipeline de bout en bout avec agents spécialisés (Recherche, Stratégie, Contenu, Qualité/Critique), streaming temps réel (SSE), mémoire de marque, génération multimédia et tableau de bord avec exports (PDF, CSV, JSON).',
+      'Architecture : API REST FastAPI, orchestration LangGraph, PostgreSQL, authentification JWT, intégration LLM OpenAI, veille marché (scraping) et revue human-in-the-loop.',
+    ],
+  },
+  {
     title: 'Stage d\'ingénieur',
     company: 'Sofrecom Tunisie',
     role: 'Ingénieur développement AI/Mobile',
